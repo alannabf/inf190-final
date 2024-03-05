@@ -1,1 +1,22 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio Waveform Visualization</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="audio-container">
+        <audio controls id="audio-player">
+            <source src="sounds/kalachashma_drums.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+    <div id="waveform-container">
+        <canvas id="waveform"></canvas>
+    </div>
+    <script src="https://unpkg.com/wavesurfer.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
