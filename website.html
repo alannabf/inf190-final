@@ -15,57 +15,100 @@
 </head>
 <body>
 
-<h1>Make Music!</h1>
+<!-- title -->
+    <h1>Make Music!</h1>
 
-<p id="wavelengthDisplay">Wavelength: --</p>
+<!-- Selecting song -->
+    <h3>Select a Song</h3> 
 
-<button type="button"></button>
-  
-<div class="dropdown">
-  <button class="dropbtn">Dropdown</button>
-  <div class="dropdown-content">
-    <a href="#">Link 1</a>
-    <a href="#">Link 2</a>
-    <a href="#">Link 3</a>
-  </div>
-</div>
+    <!--choose bass-->
+    <label for="SongSelection">Choose a Bass:</label>
+    <select name="Bass" id=Bass">
+        <option value="Kala Chashma Bass">Kala Chashma Bass</option> <!--Kala Chashma_Bass_mixed.mp3-->
+        <option value="Sprinter Bass">Sprinter Bass</option>
+        <option value="Runaway Bass">Runaway Bass</option>
+        <option value="Love Story Bass">Love Story Bass</option>
+    <option value="Dashstar Bass">Dashstar Bass</option>
+    </select>
 
-<canvas id="soundWaveDisplay" width="800" height="200"></canvas>
+    <!--choose drums-->
+    <label for="SongSelection">Choose a Drums:</label>
+    <select name="Drums" id=Drums">
+        <option value="Kala Chashma Drum">Kala Chashma Drum</option> <!--Kala Chashma_Drums_mixed.mp3-->
+        <option value="Sprinter Drum">Sprinter Drum</option>
+        <option value="Runaway Drum">Runaway Drum</option>
+        <option value="Love Story Drum">Love Story Drum</option>
+        <option value="Dashstar Drum">Dashstar Drum</option>
+    </select>
 
-<script>
-    // Get the canvas element
-    var canvas = document.getElementById("soundWaveDisplay");
-    var ctx = canvas.getContext("2d");
+     <!--choose guitar-->
+     <label for="SongSelection">Choose a Guitar:</label>
+     <select name="Guitar" id=Guitar">
+        <option value="Kala Chashma Guitar">Kala Chashma Guitar</option> <!--Kala Chashma_Drums_mixed.mp3-->
+        <option value="Sprinter Guitar">Sprinter Guitar</option>
+        <option value="Runaway Guitar">Runaway Guitar</option>
+        <option value="Love Story Guitar">Love Story Guitar</option>
+        <option value="Dashstar Guitar">Dashstar Guitar</option>
+     </select>
 
-    // Function to draw sound waves
-    function drawSoundWaves() {
-        // Clear previous drawings
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
+     <!--choose Vocals-->
+     <label for="SongSelection">Choose a Vocals:</label>
+     <select name="Vocals" id=Vocals">
+        <option value="Kala Chashma Vocals">Kala Chashma Vocals</option> <!--Kala Chashma_Drums_mixed.mp3-->
+        <option value="Sprinter Vocals">Sprinter Vocals</option>
+        <option value="Runaway Vocals">Runaway Vocals</option>
+        <option value="Love Story Vocals">Love Story Vocals</option>
+        <option value="Dashstar Vocals">Dashstar Vocals</option>
+    </select>
 
-        // Set up parameters for drawing sound waves
-        var amplitude = 50; // Amplitude of the wave
-        var frequency = 0.05; // Frequency of the wave
-        var phaseShift = 0; // Phase shift of the wave
-        var yOffset = canvas.height / 2; // Y offset to center the wave vertically
 
-        // Draw sound waves
-        ctx.beginPath();
-        ctx.moveTo(0, canvas.height / 2);
 
-        for (var x = 0; x < canvas.width; x++) {
-            var y = amplitude * Math.sin(frequency * x + phaseShift) + yOffset;
-            ctx.lineTo(x, y);
+    </select>
+
+
+
+<!--Audio Waves--> 
+    <p id="wavelengthDisplay">Wavelength: --</p>
+
+    <canvas id="soundWaveDisplay" width="800" height="50"></canvas>
+
+    <script>
+        // Get the canvas element
+        var canvas = document.getElementById("soundWaveDisplay");
+        var ctx = canvas.getContext("2d");
+
+        // Function to draw sound waves
+        function drawSoundWaves() {
+            // Clear previous drawings
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Set up parameters for drawing sound waves
+            var amplitude = 50; // Amplitude of the wave
+            var frequency = 0.05; // Frequency of the wave
+            var phaseShift = 0; // Phase shift of the wave
+            var yOffset = canvas.height / 2; // Y offset to center the wave vertically
+
+            // Draw sound waves
+            ctx.beginPath();
+            ctx.moveTo(0, canvas.height / 2);
+
+            for (var x = 0; x < canvas.width; x++) {
+                var y = amplitude * Math.sin(frequency * x + phaseShift) + yOffset;
+                ctx.lineTo(x, y);
+            }
+
+            // Style and stroke the path
+            ctx.strokeStyle = "blue";
+            ctx.lineWidth = 2;
+            ctx.stroke();
         }
 
-        // Style and stroke the path
-        ctx.strokeStyle = "blue";
-        ctx.lineWidth = 2;
-        ctx.stroke();
-    }
-
-    // Call the drawSoundWaves function to initially draw sound waves
-    drawSoundWaves();
-</script>
+        // Call the drawSoundWaves function to initially draw sound waves
+        drawSoundWaves();
+    </script>
 
 </body>
+
+
+
 </html>
