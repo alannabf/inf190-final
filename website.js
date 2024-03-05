@@ -7,4 +7,9 @@ document.addEventListener("", function() {
     demoElement.innerHTML = "Hello, JavaScript!";
 };
 
+let aud = document.getElementById("myAudio");
+aud.onplay = function() {
+    alert("The audio has started to play");
+};
+
 </script>
