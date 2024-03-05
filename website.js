@@ -1,3 +1,14 @@
+const playPauseButton = document.getElementById('playPauseButton');
+const audio = document.getElementById('audio-player');
+const wavesurfer = WaveSurfer.create({
+    container: '#waveform', 
+    waveColor: 'rgb(200, 0, 200)',
+    progressColor: 'rgb(100, 0, 100)',
+    backend: 'MediaElement',
+    mediaControls: true,
+    mediaType: 'audio',
+    responsive: true
+});
 
 const playPauseButton = document.getElementById('playPauseButton');
 const audio = document.getElementById('audio-player');
