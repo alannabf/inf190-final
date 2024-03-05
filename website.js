@@ -13,7 +13,6 @@ function togglePlayPause() {
         playPauseButton.textContent = "Pause";
         audio.pause();
     }
-    // Toggle the playing state
     isPlaying = !isPlaying;
 }
 
