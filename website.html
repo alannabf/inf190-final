@@ -11,6 +11,14 @@
             display: block;
             margin-top: 10px;
         }
+        #audioContainer {
+    display: flex;
+    flex-direction: column; /* Organizes the items vertically */
+    align-items: flex-start; /* Aligns items to the left */
+    gap: 20px; /* Creates space between the items */
+}
+
+
     </style>
 </head>
 <body>
@@ -28,7 +36,7 @@
         <option value="sprinter_bass">Sprinter Bass</option>
         <option value="runaway_bass">Runaway Bass</option>
         <option value="lovestory_bass">Love Story Bass</option>
-        <option value="dashstar_bass">Dashstar Bass</option>
+        <option value="dshstar_bass+other">Dashstar Bass</option>
         <option value="myeyes_bass">My Eyes Bass</option>
         <option value="None">None</option>
     </select>
@@ -72,8 +80,14 @@
 
 <!-- Insert the Confirm Selection Button after the dropdowns -->
 <button id="confirmSelection">Confirm Selection</button>
+<button id="startAll">Start All</button>
+<button id="pauseAll">Pause All</button>
+
+
+<div id="audioContainer"> </div>
 
 <script type="text/javascript">
+    
     // Function to load and prepare sound files based on user selections
     function prepareSoundFiles() {
     // Get user selections from dropdowns
@@ -89,22 +103,40 @@
     updateAudioSource('audioVocals', vocalsSelection);
 }
 
+
 function updateAudioSource(audioId, src) {
-    let audioElement = document.getElementById(audioId);
-    // If the audio element does not exist, create it
-    if (!audioElement) {
-        audioElement = document.createElement('audio');
-        audioElement.id = audioId;
-        audioElement.controls = true; // Add controls so the user can play the audio
-        document.body.appendChild(audioElement); // Append the audio element to the body or a specific container
+        let audioElement = document.getElementById(audioId);
+        let container = document.getElementById('audioContainer'); // Get the container
+        // If the audio element does not exist, create it
+        if (!audioElement) {
+            audioElement = document.createElement('audio');
+            audioElement.id = audioId;
+            audioElement.controls = true;
+            container.appendChild(audioElement); // Append to the container
+        }
+        audioElement.src = 'sounds/' + src;
     }
-    // Update the source of the audio element
-    audioElement.src = 'sounds/' + src; // Update the path accordingly
-}
 
 // Ensure this script runs after the document has loaded, or place the <script> tag at the end of the body
 
     document.getElementById('confirmSelection').addEventListener('click', prepareSoundFiles);
+
+    document.getElementById('startAll').addEventListener('click', function() {
+    const audioElements = document.querySelectorAll('audio');
+    audioElements.forEach(audio => {
+        if (audio.src) { // Check if the audio element has a source set
+            audio.play();
+        }
+    });
+});
+
+    document.getElementById('pauseAll').addEventListener('click', function() {
+    const audioElements = document.querySelectorAll('audio');
+    audioElements.forEach(audio => {
+        audio.pause(); // Pause playback without resetting the position
+    });
+});
+
 </script>
 
 <!-- Existing script for drawing sound waves -->
