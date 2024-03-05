@@ -1,5 +1,38 @@
+const playPauseButton = document.getElementById('playPauseButton');
+const audio = document.getElementById('audio-player');
+const wavesurfer = WaveSurfer.create({
+    container: '#waveform', 
+    waveColor: 'rgb(200, 0, 200)',
+    progressColor: 'rgb(100, 0, 100)',
+    backend: 'MediaElement',
+    mediaControls: true,
+    mediaType: 'audio',
+    responsive: true
+});
 
 
+//play pause for waves
+
+function togglePlayPause() {
+    if (isPlaying) {
+        playPauseButton.textContent = "Play";
+        audio.pause(); // Pause the audio
+        wavesurfer.pause(); // Pause the WaveSurfer visualization
+    } else {
+        playPauseButton.textContent = "Pause";
+        audio.play(); // Play the audio
+        wavesurfer.play(); // Play the WaveSurfer visualization
+    }
+    // Toggle the playing state
+    isPlaying = !isPlaying;
+}
+
+playPauseButton.addEventListener('click', togglePlayPause);
+
+wavesurfer.load('sounds/kalachashma_drums.mp3'); // Load your audio file
+wavesurfer.on('ready', function () {
+    wavesurfer.play(); // Auto-play the waveform visualization when ready
+});
 
 //play sounds for dropdowns and confirming selections
  // Function to load and prepare sound files based on user selections
@@ -33,3 +66,4 @@ function updateAudioSource(audioId, src) {
 // Ensure this script runs after the document has loaded, or place the <script> tag at the end of the body
 
     document.getElementById('confirmSelection').addEventListener('click', prepareSoundFiles);
+
