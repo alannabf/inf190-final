@@ -1,15 +1,20 @@
 
-<script>
+// Play/pause button
+const playPauseButton = document.getElementById('playPauseButton');
+const audio = new Audio() //enter a specific song in parenthesis; need to figure out 
 
-document.addEventListener("", function() {
-    // This function will be called when the DOM is fully loaded
-    var demoElement = document.getElementById("demo");
-    demoElement.innerHTML = "Hello, JavaScript!";
-};
+let isPlaying = false;
 
-let aud = document.getElementById("myAudio");
-aud.onplay = function() {
-    alert("The audio has started to play");
-};
+function togglePlayPause() {
+    if (isPlaying) {
+        playPauseButton.textContent = "Play";
+        audio.play();
+    } else {
+        playPauseButton.textContent = "Pause";
+        audio.pause();
+    }
+    // Toggle the playing state
+    isPlaying = !isPlaying;
+}
 
-</script>
+playPauseButton.addEventListener('click', togglePlayPause);
