@@ -1,10 +1,23 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+        }
+        canvas {
+            border: 1px solid white;
+            display: block;
+            margin-top: 10px;
+        }
+    </style>
+</head>
 <body>
 
 <h1>Make Music!</h1>
 
-<p1></p1>
+<p id="wavelengthDisplay">Wavelength: --</p>
 
 <button type="button"></button>
   
@@ -17,6 +30,42 @@
   </div>
 </div>
 
+<canvas id="soundWaveDisplay" width="800" height="200"></canvas>
+
+<script>
+    // Get the canvas element
+    var canvas = document.getElementById("soundWaveDisplay");
+    var ctx = canvas.getContext("2d");
+
+    // Function to draw sound waves
+    function drawSoundWaves() {
+        // Clear previous drawings
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // Set up parameters for drawing sound waves
+        var amplitude = 50; // Amplitude of the wave
+        var frequency = 0.05; // Frequency of the wave
+        var phaseShift = 0; // Phase shift of the wave
+        var yOffset = canvas.height / 2; // Y offset to center the wave vertically
+
+        // Draw sound waves
+        ctx.beginPath();
+        ctx.moveTo(0, canvas.height / 2);
+
+        for (var x = 0; x < canvas.width; x++) {
+            var y = amplitude * Math.sin(frequency * x + phaseShift) + yOffset;
+            ctx.lineTo(x, y);
+        }
+
+        // Style and stroke the path
+        ctx.strokeStyle = "blue";
+        ctx.lineWidth = 2;
+        ctx.stroke();
+    }
+
+    // Call the drawSoundWaves function to initially draw sound waves
+    drawSoundWaves();
+</script>
 
 </body>
 </html>
