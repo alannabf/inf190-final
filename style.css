@@ -1,0 +1,32 @@
+
+ body {
+    background-color: black;
+    color: white;
+}
+canvas {
+    border: 1px solid white;
+    display: block;
+    margin-top: 10px;
+}
+.container{
+    background-color: darkgray;
+    min-height: 900px;
+    width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.header{
+    height: 200px;
+    width: 1000px;
+    background-color: white;
+}
+h1{
+    color: black;
+    text-align: center;
+}
+#audioContainer {
+    display: flex;
+    flex-direction: column; /* Organizes the items vertically */
+    align-items: flex-start; /* Aligns items to the left */
+    gap: 20px; /* Creates space between the items */
+}
