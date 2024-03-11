@@ -1,32 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
 
- body {
-    background-color: black;
-    color: white;
+.header{
+    height: 100px;
+    background-color: lightcoral;
+    margin: 0;
+    padding: 0;
 }
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white; 
+}
+/*
 canvas {
     border: 1px solid white;
     display: block;
-    margin-top: 10px;
 }
-.container{
-    background-color: darkgray;
-    min-height: 900px;
-    width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
+
+.SongSelection{
+    background-color: rgb(49, 46, 46);
+    min-height: 500px;
+    
 }
-.header{
-    height: 200px;
-    width: 1000px;
-    background-color: white;
+*/
+.Songs{
+    margin-left: 50px;
+    margin-right: 50px;
+    flex-direction: column; /* Organizes the items vertically */
 }
+
+
 h1{
-    color: black;
+    color: white;
     text-align: center;
+    padding-top: 25px;
+    font-size: 50px;    
+    letter-spacing: 5px;
 }
+
+h3{
+    margin-left: 50px;
+    padding: 10px;
+
+}
+
 #audioContainer {
     display: flex;
     flex-direction: column; /* Organizes the items vertically */
     align-items: flex-start; /* Aligns items to the left */
     gap: 20px; /* Creates space between the items */
 }
+
+.button{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+}
+
+/* buttons */
+button{
+    transition-duration: 0.4s;
+    display:flex;
+    
+    font-size: 15px;
+    color: white;
+    background-color: rgb(239, 175, 175);
+    border-radius: 12px;
+    margin: 4px 2px;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border:none;
+}
+button:focus{
+    background-color:lightcoral;
+}
+
+button:hover{
+    background-color:lightcoral;
+}
+
