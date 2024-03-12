@@ -50,13 +50,43 @@ h3{
 
 }
 
-#audioContainer {
+.container {
     display: flex;
-    flex-direction: column; /* Organizes the items vertically */
-    align-items: flex-start; /* Aligns items to the left */
-    gap: 20px; /* Creates space between the items */
+    justify-content: space-between;
 }
 
+#audioContainer, #audioContainer2 {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#audioContainer {
+    align-items: flex-start;
+    margin-left: 50px; /* Ensure alignment and spacing */
+}
+
+#audioContainer2 {
+    align-items: flex-end; /* Change this to flex-start for consistency */
+    margin-right: 50px; /* Adjust to bring it further off the right side */
+}
+
+/*
+#audioContainer {
+    display: flex;
+    flex-direction: column; /* Organizes the items vertically 
+    align-items: flex-start; /* Aligns items to the left 
+    gap: 20px; /* Creates space between the items 
+}
+
+#audioContainer2 {
+    display: flex;
+    flex-direction: column; /* Organizes the items vertically 
+    align-items: flex-end; /* Aligns items to the left 
+    gap: 20px; /* Creates space between the items 
+}
+*/
 .button{
     display: flex;
     justify-content:center;
