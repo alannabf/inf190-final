@@ -18,7 +18,7 @@
         <h3>Select Songs:</h3> 
 
         <!--choose bass-->
-        <div id="audioContainerB">
+        <div id="audioContainer">
             <label for="SongSelection">Choose a Bass:</label>
             <select name="Bass" id="Bass" onchange="getSelectedValue('Bass')">
                 <option value="None">None</option>
@@ -28,17 +28,7 @@
                 <option value="lovestory_bass">Love Story Bass</option>
                 <option value="dshstar_bass+other">Dashstar Bass</option>
             </select>
-            <label for="bassPlaybackRate">Bass Playback Rate:</label>
-            <input type="range" id="bassPlaybackRate" min="0.25" max="2.5" value="1" step="0.01">
-            <span id="bassPlaybackRateValue">1</span>
-            <label for="bassVolume">Bass Volume:</label>
-            <input type="range" id="bassVolume" min="0" max="1" step="0.01" value="1">
-            <span id="bassVolumeValue">1</span>
-        </div>
 
-
-        <!--choose drums-->
-        <div id="audioContainerD">
             <label for="SongSelection">Choose a Drums:</label>
             <select name= "Drums" id="Drums" onchange="getSelectedValue('Drums')">
                 <option value="None">None</option>
@@ -49,18 +39,7 @@
                 <option value="dshstar_drums">Dashstar Drum</option>
                 <option value="myeyes_drums">My Eyes Drum</option>
             </select>
-            <label for="drumsPlaybackRate">Drums Playback Rate:</label>
-            <input type="range" id="drumsPlaybackRate" min="0.25" max="2.5" value="1" step="0.01">
-            <span id="drumsPlaybackRateValue">1</span>
-            <label for="drumsVolume">Drums Volume:</label>
-            <input type="range" id="drumsVolume" min="0" max="1" step="0.01" value="1">
-            <span id="drumsVolumeValue">1</span>
-        </div>
 
-
-
-        <!--choose guitar-->
-        <div id="audioContainerG">
             <label for="SongSelection">Choose a Guitar/Piano:</label>
             <select name="Guitar/Piano" id="Guitar" onchange="getSelectedValue('Guitar')">
                 <option value="None">None</option>
@@ -70,17 +49,7 @@
                 <option value="lovestory_guitar+others">Love Story Guitar</option>
                 <option value="myeyes_piano">My Eyes Piano</option>
             </select>
-            <label for="guitarPlaybackRate">Guitar/Piano Playback Rate:</label>
-            <input type="range" id="guitarPlaybackRate" min="0.25" max="2.5" value="1" step="0.01">
-            <span id="guitarPlaybackRateValue">1</span>
-            <label for="guitarVolume">Guitar/Piano Volume:</label>
-            <input type="range" id="guitarVolume" min="0" max="1" step="0.01" value="1">
-            <span id="guitarVolumeValue">1</span>
-        </div>
 
-        
-        <!--choose Vocals-->
-        <div id="audioContainerV">
             <label for="SongSelection">Choose a Vocals:</label>
             <select name="Vocals" id="Vocals" onchange="getSelectedValue('Vocals')">
                 <option value="None">None</option>
@@ -91,14 +60,46 @@
                 <option value="dshstar_vocals">Dashstar Vocals</option>
                 <option value="myeyes_vocals">My Eyes Vocals</option>
             </select>
+        </div>
+
+
+        <!--choose drums-->
+        <div id="audioContainer2">
+            <label for="bassPlaybackRate">Bass Playback Rate:</label>
+            <input type="range" id="bassPlaybackRate" min="0.25" max="2.5" value="1" step="0.01">
+            <span id="bassPlaybackRateValue">1</span>
+            <label for="drumsPlaybackRate">Drums Playback Rate:</label>
+            <input type="range" id="drumsPlaybackRate" min="0.25" max="2.5" value="1" step="0.01">
+            <span id="drumsPlaybackRateValue">1</span>
+            <label for="guitarPlaybackRate">Guitar/Piano Playback Rate:</label>
+            <input type="range" id="guitarPlaybackRate" min="0.25" max="2.5" value="1" step="0.01">
+            <span id="guitarPlaybackRateValue">1</span>
             <label for="vocalsPlaybackRate">Vocals Playback Rate:</label>
             <input type="range" id="vocalsPlaybackRate" min="0.25" max="2.5" value="1" step="0.01">
             <span id="vocalsPlaybackRateValue">1</span>
+            
+        </div>
+
+
+
+        <!--choose guitar-->
+        <div id="audioContainer3">
+            <label for="bassVolume">Bass Volume:</label>
+            <input type="range" id="bassVolume" min="0" max="1" step="0.01" value="1">
+            <span id="bassVolumeValue">1</span>
+            <label for="drumsVolume">Drums Volume:</label>
+            <input type="range" id="drumsVolume" min="0" max="1" step="0.01" value="1">
+            <span id="drumsVolumeValue">1</span>
+            <label for="guitarVolume">Guitar/Piano Volume:</label>
+            <input type="range" id="guitarVolume" min="0" max="1" step="0.01" value="1">
+            <span id="guitarVolumeValue">1</span>
             <label for="vocalVolume">Vocals Volume:</label>
             <input type="range" id="vocalVolume" min="0" max="1" step="0.01" value="1">
             <span id="vocalsVolumeValue">1</span>
         </div>
 
+        
+       
 
     <!-- Insert the Confirm Selection Button after the dropdowns -->
     <div class="button">
