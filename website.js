@@ -1,17 +1,15 @@
-function prepareSoundFiles() {
-  // Get user selections from dropdowns
-  const bassSelection = document.getElementById('Bass').value.replace(/ /g, "_") + ".mp3";
-  const drumsSelection = document.getElementById('Drums').value.replace(/ /g, "_") + ".mp3";
-  const guitarSelection = document.getElementById('Guitar').value.replace(/ /g, "_") + ".mp3";
-  const vocalsSelection = document.getElementById('Vocals').value.replace(/ /g, "_") + ".mp3";
-  
-  // Function to create or update audio elements for the selected files
-  updateAudioSource('audioBass', bassSelection);
-  updateAudioSource('audioDrums', drumsSelection);
-  updateAudioSource('audioGuitar', guitarSelection);
-  updateAudioSource('audioVocals', vocalsSelection);
+
+
+function getSelectedValue(dropdownId){
+    var dropdown =document.getElementById(dropdownId);
+    const selectedValue = dropdown.value.replace(/ /g, "_") + ".mp3";
+    updateAudioSource('audio' + dropdownId, selectedValue);
+    audioElement = document.createElement('audio');
+    audioElement.src = 'sounds/' + src;
 }
 
+
+/*
 
 function updateAudioSource(audioId, src) {
   let audioElement = document.getElementById(audioId);
@@ -25,7 +23,7 @@ function updateAudioSource(audioId, src) {
   }
   audioElement.src = 'sounds/' + src;
 }
-
+*/
 // Ensure this script runs after the document has loaded, or place the <script> tag at the end of the body
 document.getElementById('confirmSelection').addEventListener('click', prepareSoundFiles);
 

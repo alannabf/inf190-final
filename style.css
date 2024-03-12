@@ -17,24 +17,20 @@ body {
     background-color: black;
     color: white; 
 }
-/*
-canvas {
-    border: 1px solid white;
-    display: block;
-}
 
 .SongSelection{
     background-color: rgb(49, 46, 46);
     min-height: 500px;
     
 }
-*/
+
+/*
 .Songs{
     margin-left: 50px;
     margin-right: 50px;
-    flex-direction: column; /* Organizes the items vertically */
+    flex-direction: column;  Organizes the items vertically 
 }
-
+*/
 
 h1{
     color: white;
@@ -67,10 +63,6 @@ h3{
     margin-left: 50px; /* Ensure alignment and spacing */
 }
 
-#audioContainer2 {
-    align-items: flex-end; /* Change this to flex-start for consistency */
-    margin-right: 50px; /* Adjust to bring it further off the right side */
-}
 
 /*
 #audioContainer {
