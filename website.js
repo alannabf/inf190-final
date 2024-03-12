@@ -1,5 +1,5 @@
 
-
+/*
 function getSelectedValue(dropdownId){
     var dropdown =document.getElementById(dropdownId);
     const selectedValue = dropdown.value.replace(/ /g, "_") + ".mp3";
@@ -7,9 +7,7 @@ function getSelectedValue(dropdownId){
     audioElement = document.createElement('audio');
     audioElement.src = 'sounds/' + src;
 }
-
-
-/*
+*/
 
 function updateAudioSource(audioId, src) {
   let audioElement = document.getElementById(audioId);
@@ -23,7 +21,7 @@ function updateAudioSource(audioId, src) {
   }
   audioElement.src = 'sounds/' + src;
 }
-*/
+
 // Ensure this script runs after the document has loaded, or place the <script> tag at the end of the body
 document.getElementById('confirmSelection').addEventListener('click', prepareSoundFiles);
 
