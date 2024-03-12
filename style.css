@@ -51,10 +51,10 @@ h3{
     justify-content: space-between;
 }
 
-#audioContainer, #audioContainer2 {
+#audioContainer, #audioContainer2, #audioContainer3 {
     flex: 1;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 20px;
 }
 
@@ -63,6 +63,15 @@ h3{
     margin-left: 50px; /* Ensure alignment and spacing */
 }
 
+#audioContainer2 {
+    align-items: flex-start;
+    margin-left: 50px; /* Ensure alignment and spacing */
+}
+
+#audioContainer3 {
+    align-items: flex-start;
+    margin-left: 50px; /* Ensure alignment and spacing */
+}
 
 /*
 #audioContainer {
