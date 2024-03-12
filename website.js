@@ -1,17 +1,21 @@
-
-/*
-function getSelectedValue(dropdownId){
-    var dropdown =document.getElementById(dropdownId);
-    const selectedValue = dropdown.value.replace(/ /g, "_") + ".mp3";
-    updateAudioSource('audio' + dropdownId, selectedValue);
-    audioElement = document.createElement('audio');
-    audioElement.src = 'sounds/' + src;
+function prepareSoundFiles() {
+  // Get user selections from dropdowns
+  const bassSelection = document.getElementById('Bass').value.replace(/ /g, "_") + ".mp3";
+  const drumsSelection = document.getElementById('Drums').value.replace(/ /g, "_") + ".mp3";
+  const guitarSelection = document.getElementById('Guitar').value.replace(/ /g, "_") + ".mp3";
+  const vocalsSelection = document.getElementById('Vocals').value.replace(/ /g, "_") + ".mp3";
+  
+  // Function to create or update audio elements for the selected files
+  updateAudioSource('audioBass', bassSelection);
+  updateAudioSource('audioDrums', drumsSelection);
+  updateAudioSource('audioGuitar', guitarSelection);
+  updateAudioSource('audioVocals', vocalsSelection);
 }
-*/
+
 
 function updateAudioSource(audioId, src) {
   let audioElement = document.getElementById(audioId);
-  let container = document.getElementById('audioContainer'); // Get the container
+  let container = document.getElementById('audioContainer4'); // Get the container
   // If the audio element does not exist, create it
   if (!audioElement) {
       audioElement = document.createElement('audio');
